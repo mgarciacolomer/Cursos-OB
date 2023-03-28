@@ -3,7 +3,7 @@ import pprint
 import operaciones as oper
 
 # PAQUETE
-import matematicas.suma
+from matematicas import suma
 
 def main():
     print('Hola en main()')
@@ -17,7 +17,7 @@ def main():
     print(oper.PI)
     pprint.pprint(sys.path)
 
-    res = matematicas.suma.suma(3, 4)
+    res = suma.suma(3, 4)
     print(res)
 
 # CONVENCION PARA EL MAIN
