@@ -6,9 +6,12 @@ def main():
     for i in range(len(paises)):
         paises[i] = paises[i].strip(' ')
 
+    # Convertimos en un set para eliminar elementos repetidos
     paises = set(paises)
 
-    print(sorted(paises))
+    for pais in sorted(paises):
+        print(pais)
+
 
 if __name__ == '__main__':
     main()
