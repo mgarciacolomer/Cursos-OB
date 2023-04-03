@@ -8,10 +8,13 @@ def main():
 
     # Convertimos en un set para eliminar elementos repetidos
     paises = set(paises)
+    # Ordenamos
+    paises = sorted(paises)
+    mostrar = ''
+    for pais in paises:
+        mostrar += pais + ', '
 
-    for pais in sorted(paises):
-        print(pais)
-
+    print(mostrar.strip(' ,')) # Quitamos última coma
 
 if __name__ == '__main__':
     main()
