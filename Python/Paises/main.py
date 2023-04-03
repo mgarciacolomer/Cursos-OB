@@ -10,6 +10,8 @@ def main():
     paises = set(paises)
     # Ordenamos
     paises = sorted(paises)
+
+    # Arreglamos la cadena a mostrar
     mostrar = ''
     for pais in paises:
         mostrar += pais + ', '
