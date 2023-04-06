@@ -8,7 +8,7 @@ labelLista.pack()
 listBoxCompra = tk.Listbox(mainWindow, selectmode=tk.EXTENDED, width=100)
 listaCompra =['Leche', 'Galletas', 'Pan', 'Patatas', 'Jamón', 'Queso', 'Cerveza']
 
-listBoxCompra.insert(0, *listaCompra)
+listBoxCompra.insert(0,*listaCompra)
 listBoxCompra.pack()
 
 mainWindow.mainloop()
