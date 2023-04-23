@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{{director.nombre}} {{director.apellido}}</title>
+</head>
+<body>
+<a href="{% url 'director_list' %}" >Lista de Directores</a>
+{% block content %}
+  <h1>{{ director.nombre }} {{ director.apellido}}</h1>
+
+  <p><strong>Fecha Nacimiento:</strong> {{ director.fechaNacimiento }}</p>
+  <p><strong>Fecha Fallecimiento:</strong> {{ director.fechaFallecimiento }}</p>
+  <p><strong>Biografía:</strong> {{ director.bio }}</p>
+  <br>
+  <img src="{{director.fotoLink}}" alt="Foto">
+
+
+  <div style="margin-left:20px;margin-top:20px">
+    <h4>Películas</h4>
+    <br>
+    {% for pelicula in pelicula_list %}
+    <hr>
+    <ul>
+      <li><a href="{{ pelicula.get_absolute_url }}" >{{ pelicula.titulo }}</a></li>
+    </ul>
+    {% endfor %}
+  </div>
+
+{% endblock %}
+
+</body>
+</html>

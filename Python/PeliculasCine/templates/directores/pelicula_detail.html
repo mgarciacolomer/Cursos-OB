@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ pelicula.titulo }}</title>
+</head>
+<body>
+<a href="{% url 'director_list' %}" >Lista de Directores</a>
+{% block content %}
+  <h1>{{ pelicula.titulo }}</h1>
+  <img style="max-height: 400px; max-width: 400px;" src="{{ pelicula.fotoLink }}" alt="{{ pelicula.titulo  }}">
+
+  <p><strong>Dirigida por:</strong><a href="{{ director.get_absolute_url }}"> {{ pelicula.director.nombre }} {{ pelicula.director.apellido }}</a></p>
+  <p><strong>Año de publicación:</strong> {{ pelicula.anyoPub }}</p>
+  <p><strong>Género:</strong>
+      {% for gen in generos %}
+        {{ gen }},
+      {% endfor %}
+  </p>
+  <p><strong>Sinopsis:</strong> {{ pelicula.sinopsis }}</p>
+{% endblock %}
+</body>
+</html>

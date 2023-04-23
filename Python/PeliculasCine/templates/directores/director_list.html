@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Directores</title>
+</head>
+<body>
+
+<a href="{% url 'director_list' %}" >Lista de Directores</a>
+{% block content %}
+
+    <h1>Lista de directores de cine</h1>
+
+    {% if director_list %}
+        <ul>
+            {% for director in director_list %}
+            <li>
+                <a href="{{director.get_absolute_url}}">{{director.nombre}} {{director.apellido}}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No hay directores</p>
+    {% endif %}
+{% endblock %}
+
+</body>
+</html>
